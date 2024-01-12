@@ -1,1 +1,734 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+@import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
+
+/**
+ * Base Elements
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span,
+a,
+button {
+  font-family: "Lato", "Open Sans", "Helvetica Neue", "Segoe UI", Helvetica,
+    Arial, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  background: #f3f3f3;
+}
+
+a {
+  color: #016aba;
+  text-decoration: none;
+}
+
+button {
+  font-size: 100%;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/**
+ * Button
+ */
+
+.blue-button {
+  width: 200px;
+  justify-content: center;
+  padding: 10px 30px 10px;
+  text-decoration: none;
+  color: #fff;
+  background: #016aba;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.9;
+  display: flex;
+}
+
+.blue-button:hover {
+  opacity: 1;
+}
+
+.red-button {
+  width: 200px;
+  justify-content: center;
+  padding: 10px 30px 10px;
+  text-decoration: none;
+  color: #fff;
+  background: #a91c00;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.9;
+  display: flex;
+}
+
+.red-button:hover {
+  opacity: 1;
+}
+
+.green-button {
+  width: 200px;
+  justify-content: center;
+  padding: 10px 30px 10px;
+  text-decoration: none;
+  color: #fff;
+  background: #0a7d00;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.9;
+  display: flex;
+}
+
+.green-button:hover {
+  opacity: 1;
+}
+
+.grey-button {
+  width: 200px;
+  justify-content: center;
+  padding: 10px 30px 10px;
+  text-decoration: none;
+  color: #fff;
+  background: #555;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.9;
+  display: flex;
+}
+
+.grey-button:hover {
+  opacity: 1;
+}
+
+/**
+ * Body Container
+ */
+
+.container {
+  max-width: 1024px;
+  min-height: 100vh;
+  background: #f9f9f9;
+  margin: 0 auto;
+}
+/**
+ * Top Navigation
+ */
+
+.menu {
+  height: 4em;
+  background-color: #677ae4;
+  background-color: #05526a;
+  background-color: #e46855;
+}
+
+.menu h1 {
+  position: relative;
+  padding: 5px 0 0 8px;
+  color: #f9f9f9;
+  font-size: 1.8em;
+  font-style: italic;
+}
+
+.menu a,
+.menu .links {
+  display: inline-block;
+}
+
+.menu a {
+  text-decoration: none;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu a:hover,
+.menu a.active {
+  opacity: 1;
+}
+
+.menu .links {
+  padding: 0 21px;
+}
+
+.menu .links a {
+  position: relative;
+  bottom: 5px;
+}
+
+.authors label span {
+  font-size: 140%;
+  margin: 50px auto 20px;
+  display: block;
+  text-align: center;
+  font-style: italic;
+}
+
+.authors input {
+  padding: 11px;
+  font-size: 18px;
+  width: 500px;
+  margin: 20px auto 50px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: solid 1px lightgray;
+  display: block;
+}
+
+.menu input:focus {
+  background-color: #f9f9f9;
+  outline: none;
+}
+
+.menu button {
+  margin-right: 15px;
+  position: relative;
+  top: -1px;
+  left: -5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #262626;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.menu button:hover {
+  background-color: #111;
+  opacity: 1;
+}
+
+.menu .results {
+  display: none;
+  position: absolute;
+  width: 215px;
+  top: 54px;
+  left: 10px;
+  background-color: #f6f6f6;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.results {
+  margin-top: -10px;
+}
+
+.results li {
+  list-style: none;
+  padding: 10px 15px;
+}
+
+.menu .results li:hover {
+  background: #f3f3f3;
+}
+/**
+ * Content Area
+ */
+
+.body {
+  padding: 15px;
+}
+/**
+ * Similar to Jumbotron
+ */
+
+.jumbo {
+  padding: 100px;
+  background: #f6f6f6;
+}
+
+.jumbo:hover {
+  background-color: #f3f3f3;
+}
+
+.jumbo h2 {
+  font-size: 3.2em;
+  margin-top: -25px;
+}
+
+.jumbo p,
+.jumbo address {
+  margin-bottom: 25px;
+}
+
+.jumbo img {
+  height: 200px;
+  position: relative;
+  top: -25px;
+  right: -20px;
+}
+
+/**
+ * Individual author Listing
+ */
+
+.author {
+  margin-top: 15px;
+  background-color: #f6f6f6;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.author:hover {
+  background-color: #f3f3f3;
+}
+
+.author img {
+  border-radius: 5px;
+}
+
+.author .image {
+  flex-grow: 0;
+  flex-basis: 150px;
+  margin: 20px 25px;
+  text-align: center;
+}
+
+.author button.image {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  z-index: 1;
+}
+
+.author button.image:focus {
+  outline: none;
+}
+
+.author button.image:after {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  margin: -20px;
+  padding: 20px;
+  border-radius: 5px;
+  background: #016aba;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.author button.image:focus:after,
+.author button.image:hover:after {
+  opacity: 0.1;
+}
+
+.author .image img {
+  max-width: 100%;
+}
+
+.author .image.large {
+  margin: 30px 25px 50px 25px;
+  flex-basis: 100%;
+}
+
+.author .image small {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: -15px;
+  text-align: center;
+  color: #016aba;
+
+  /* This is needed to fix a safari clipping issue */
+  position: relative;
+}
+
+.author .image.large small {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 110%;
+}
+
+.author .details {
+  flex-basis: 50%;
+  flex-grow: 2;
+  display: flex;
+  height: 150px;
+  margin: 20px 25px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.author h3 {
+  flex-basis: 100%;
+}
+
+.author h3 a {
+  display: inline;
+}
+
+.author .detail {
+  flex-basis: 50%;
+  font-weight: 300;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.author .detail span {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.author .map {
+  flex-grow: 0;
+  flex-basis: 150px;
+  font-size: 0;
+  margin: 0px 25px;
+}
+
+.author .map img {
+  width: 150px;
+  height: 150px;
+}
+
+.rental.detailed {
+  background: none;
+  align-items: flex-start;
+}
+
+.rental.detailed .image {
+  flex-basis: 320px;
+}
+
+.rental.detailed .image.large {
+  margin: 30px 25px 50px 25px;
+  flex-basis: 100%;
+}
+
+.rental.detailed .details {
+  height: auto;
+}
+
+.rental.detailed h3 {
+  font-size: 200%;
+  margin-bottom: 10px;
+}
+
+.rental.detailed .detail {
+  margin: 5px 0px;
+  flex-basis: 100%;
+  flex-shrink: 2;
+}
+
+.rental.detailed .description {
+  white-space: normal;
+  flex-basis: 100%;
+  flex-shrink: 1;
+}
+
+.rental.detailed .map {
+  flex-basis: 100%;
+  margin: 50px 25px 25px 25px;
+}
+
+.rental.detailed .map img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 919px) {
+  .rental.detailed .image,
+  .rental.detailed .image.large {
+    margin: 30px 25px 25px 25px;
+    flex-basis: 100%;
+    cursor: default;
+  }
+
+  .rental.detailed .image:hover {
+    flex-basis: 100%;
+    cursor: default;
+  }
+
+  .rental.detailed .image small {
+    display: none;
+  }
+
+  .rental.detailed button.image:hover:after {
+    opacity: 0;
+  }
+
+  .rental.detailed button.image:focus:after {
+    opacity: 0.1;
+  }
+
+  .rental.detailed .map {
+    margin-top: 25px;
+  }
+}
+
+/**
+ * Utilities
+ */
+
+.light {
+  font-weight: 300;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.relative {
+  position: relative;
+}
+
+.tomster {
+  background: url(../assets/images/teaching-tomster.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+
+  position: relative;
+  top: -25px;
+}
+
+.screen-reader {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.task-entry h4 {
+  margin-bottom: 20px;
+}
+
+.task-entry p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.author-tasks-details {
+  padding: 20px;
+  margin: 20px;
+}
+
+.author-tasks-details .details {
+  justify-content: space-between;
+}
+
+.author-tasks-details .box {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.author-tasks-details .box.tasks {
+  width: 100%;
+}
+
+.author-tasks-details h3 {
+  margin-bottom: 10px;
+}
+
+.author-details,
+.author-details .box {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff; /* White background */
+  padding: 10px; /* Padding around the content */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Shadow for a bit of depth */
+}
+
+.author-details .buttons {
+  display: flex;
+  justify-content: flex-end; /* Align the buttons to the right */
+}
+
+.button-container {
+  justify-content: flex-end;
+  margin-left: 10px;
+}
+
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content h3 {
+  margin-bottom: 20px; /* Adjust this to your needs */
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 10px; /* Adjust this to your needs */
+}
+
+.modal-content input[type="text"] {
+  height: 25px; /* Adjust this to your needs */
+  font-size: 16px; /* Adjust this to your needs */
+  padding: 5px;
+}
+
+.modal-content button {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Shadow for a bit of depth */
+  padding: 10px 15px; /* Add some padding */
+  text-align: center; /* Center the text */
+  border-width: 0cap;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.add-author button {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Shadow for a bit of depth */
+  padding: 10px 15px; /* Add some padding */
+  text-align: center; /* Center the text */
+  border-width: 0cap;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Adjust this as needed */
+}
+
+.task-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.task-entry {
+  margin-bottom: 20px;
+}
+
+.task-title,
+.task-description,
+.task-status,
+.task-due-date {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.task-delete-button {
+  margin-top: 10px;
+}
+
+#top-menu-buttons {
+  display: flex;
+  justify-content: left;
+}
+
+#top-menu-buttons .button-container {
+  display: flex;
+}
+
+#addTaskForm label,
+#editTaskForm label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#addTaskForm input,
+#editTaskForm input,
+#addTaskForm textarea,
+#editTaskForm textarea,
+#addTaskForm select,
+#editTaskForm select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+#addTaskForm button,
+#editTaskForm button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #008cba; /* Change this to match your theme color */
+  color: white;
+  cursor: pointer;
+}
+
+#addTaskForm button:hover,
+#editTaskForm button:hover {
+  background-color: #007b9a; /* Change this to match your theme color */
+}

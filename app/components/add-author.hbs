@@ -1,0 +1,28 @@
+<!-- AddAuthor.hbs -->
+<div class='add-author'>
+    <button type='button' {{on 'click' this.toggleForm}}><div
+            class='content'
+        ><h3>Add New Author</h3></div></button>
+
+    {{#if this.showForm}}
+        <div class='modal'>
+            <div class='modal-content'>
+                <span
+                    class='close'
+                    {{on 'click' this.toggleForm}}
+                >&times;</span>
+                <h3>Add New Author</h3>
+                <form {{on 'submit' this.addAuthor}}>
+                    <label for='authorName'>Author Name:</label>
+                    <input
+                        id='authorName'
+                        type='text'
+                        {{on 'input' this.updateAuthorName}}
+                    />
+
+                    <button type='submit'>Submit</button>
+                </form>
+            </div>
+        </div>
+    {{/if}}
+</div>

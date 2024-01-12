@@ -1,0 +1,69 @@
+<div class='button-container'>
+    <button
+        type='button'
+        class='grey-button'
+        id='editTaskButton'
+        {{on 'click' this.toggleForm}}
+    >Edit Task</button>
+</div>
+
+{{#if this.showForm}}
+    <div id='editTaskModal' class='modal'>
+        <div class='modal-content'>
+            <span class='close' {{on 'click' this.toggleForm}}>&times;</span>
+            <h4>Edit Task</h4>
+            <form
+                id='editTaskForm'
+                {{on 'submit' (fn this.updateTask @task.id)}}
+            >
+                <label for='taskTitle'>Task Title:</label>
+                <input
+                    type='text'
+                    id='taskTitle'
+                    name='taskTitle'
+                    value={{this.title}}
+                    {{on 'input' this.updateTitle}}
+                    required
+                />
+
+                <label for='taskDescription'>Task Description:</label>
+                <textarea
+                    id='taskDescription'
+                    name='taskDescription'
+                    value={{this.description}}
+                    {{on 'input' this.updateDescription}}
+                    required
+                ></textarea>
+
+                <label for='taskStatus'>Task Status:</label>
+                <select
+                    id='taskStatus'
+                    name='taskStatus'
+                    value={{this.status}}
+                    {{on 'change' this.updateStatus}}
+                >
+                    <option
+                        value='Pending'
+                        {{on 'select' (fn this.updateStatus 'Pending')}}
+                    >Pending</option>
+                    <option
+                        value='Completed'
+                        {{on 'select' (fn this.updateStatus 'Completed')}}
+                    >Completed</option>
+                </select>
+
+                <label for='dueDate'>Due Date:</label>
+                <input
+                    type='date'
+                    id='dueDate'
+                    name='dueDate'
+                    value={{this.dueDate}}
+                    {{on 'input' this.updateDueDate}}
+                    required
+                />
+
+                <input type='submit' value='Edit Task' />
+            </form>
+        </div>
+    </div>
+{{/if}}

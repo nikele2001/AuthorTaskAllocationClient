@@ -1,0 +1,48 @@
+<article class='author-details'>
+    <div class='content'>
+        <h3>Author Name: {{@author.name}}</h3>
+        <h3>Task Count: {{@author.tasksCount}}</h3>
+    </div>
+    <div class='buttons'>
+        <div class='button-container'>
+            <LinkTo
+                @route='author'
+                @model={{@author.id}}
+                class='green-button'
+            >View Information</LinkTo>
+        </div>
+        <div class='button-container'>
+            {{#if this.isEditing}}
+                <div class='modal' style='display: block;'>
+                    <div class='modal-content'>
+                        <span
+                            class='close'
+                            {{on 'click' (fn this.toggleEditing)}}
+                        >&times;</span>
+                        <form {{on 'submit' (fn this.saveChanges @author.id)}}>
+                            <h3><label for='authorName'>New Author Name:</label></h3>
+                            <input
+                                id='authorName'
+                                type='text'
+                                {{on 'input' this.updateAuthorName}}
+                            />
+                            <button type='submit'>Save</button>
+                        </form>
+                    </div>
+                </div>
+            {{else}}
+                <button
+                    {{on 'click' (fn this.toggleEditing)}}
+                    class='blue-button'
+                >Edit Author</button>
+            {{/if}}
+        </div>
+        <div class='button-container'>
+            <button
+                {{on 'click' (fn this.deleteAuthor @author.id)}}
+                class='red-button'
+            >Delete Author</button>
+        </div>
+    </div>
+
+</article>
