@@ -1,12 +1,12 @@
-import Component from '@glimmer/component';
-import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
-import { inject as service } from '@ember/service';
+import Component from "@glimmer/component";
+import { action } from "@ember/object";
+import { tracked } from "@glimmer/tracking";
+import { inject as service } from "@ember/service";
 
 export default class AuthorEntryComponent extends Component {
   @service toast;
   @tracked isEditing = false;
-  newAuthorName = '';
+  newAuthorName = "";
 
   @action
   toggleForm() {
@@ -18,7 +18,7 @@ export default class AuthorEntryComponent extends Component {
     const response = await fetch(
       `http://localhost:3000/api/Authors/${authorId}`,
       {
-        method: 'DELETE',
+        method: "DELETE",
       }
     );
 
@@ -28,7 +28,7 @@ export default class AuthorEntryComponent extends Component {
       console.log(`Author with ID ${authorId} deleted successfully`);
     } else {
       // Handle error
-      console.error('An error occurred while deleting the author');
+      console.error("An error occurred while deleting the author");
     }
   }
 
@@ -41,17 +41,17 @@ export default class AuthorEntryComponent extends Component {
   async saveChanges(authorId) {
     event.preventDefault();
 
-    if (this.newAuthorName === '') {
-      this.toast.error('Please enter a name.');
+    if (this.newAuthorName === "") {
+      this.toast.error("Please enter a name.");
       return;
     }
 
     const response = await fetch(
       `http://localhost:3000/api/Authors/updateAuthor`,
       {
-        method: 'PATCH',
+        method: "PATCH",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           author: {
@@ -66,12 +66,12 @@ export default class AuthorEntryComponent extends Component {
 
     if (response.ok) {
       this.isEditing = false;
-      this.newAuthorName = '';
+      this.newAuthorName = "";
       window.location.reload();
       // Handle successful update
     } else {
       // Handle error
-      this.toast.error('Duplicate author name. Please try again.');
+      this.toast.error("Duplicate author name. Please try again.");
     }
   }
 }

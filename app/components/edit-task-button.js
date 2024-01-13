@@ -1,13 +1,13 @@
-import Component from '@glimmer/component';
-import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
+import Component from "@glimmer/component";
+import { action } from "@ember/object";
+import { tracked } from "@glimmer/tracking";
 
 export default class EditTaskButtonComponent extends Component {
   @tracked showForm = false;
   id = this.args.task.id;
-  title = this.args.task.title || '';
-  description = this.args.task.description || '';
-  status = 'Pending';
+  title = this.args.task.title || "";
+  description = this.args.task.description || "";
+  status = "Pending";
   dueDate = this.args.task.dueDate.substring(0, 10);
   authorId = this.args.task.authorId;
 
@@ -41,9 +41,9 @@ export default class EditTaskButtonComponent extends Component {
     event.preventDefault();
 
     const response = await fetch(`http://localhost:3000/api/Tasks/updateTask`, {
-      method: 'PATCH',
+      method: "PATCH",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         id: taskId,
@@ -60,7 +60,7 @@ export default class EditTaskButtonComponent extends Component {
       console.log(`Task with ID ${taskId} updated successfully`);
     } else {
       // Handle error
-      console.error('An error occurred while updating the task');
+      console.error("An error occurred while updating the task");
     }
   }
 }

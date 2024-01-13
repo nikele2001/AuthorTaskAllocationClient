@@ -4,8 +4,8 @@
   <p>Your one stop solution to managing and allocating tasks to authors.</p>
 </Jumbo>
 <AddAuthor />
-<div class='authors'>
-  <ul class='results'>
+<div class="authors">
+  <ul class="results">
     {{#each @model.authors as |author|}}
       <li><AuthorEntry @author={{author}} /></li>
     {{/each}}

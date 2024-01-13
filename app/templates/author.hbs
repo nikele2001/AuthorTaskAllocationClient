@@ -3,22 +3,22 @@
   <h2>Welcome to Author Task Allocation!</h2>
   <p>Your one stop solution to managing and allocating tasks to authors.</p>
 </Jumbo>
-<article class='author-tasks-details'>
-  <div class='buttons'>
+<article class="author-tasks-details">
+  <div class="buttons">
     <AddTaskButton @authorId={{this.model.id}} />
   </div>
-  <div class='details'>
-    <div class='box'>
+  <div class="details">
+    <div class="box">
       <h3>Author Name: {{this.model.name}}</h3>
       <div>
         <h4><span>Task Count:</span>
           {{this.model.tasks.length}}</h4>
       </div>
     </div>
-    <div class='box'>
+    <div class="box">
       <h3>Tasks</h3>
       {{#each this.model.tasks as |task|}}
-        <div class='box'>
+        <div class="box">
           <TaskEntry @task={{task}} />
         </div>
       {{/each}}

@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 module.exports = function (environment) {
   const ENV = {
-    modulePrefix: 'clients',
+    modulePrefix: "clients",
     environment,
-    rootURL: '/',
-    locationType: 'history',
+    rootURL: "/",
+    locationType: "history",
     EmberENV: {
       EXTEND_PROTOTYPES: false,
       FEATURES: {
@@ -18,26 +18,26 @@ module.exports = function (environment) {
       // when it is created
     },
 
-    'ember-toastr': {
+    "ember-toastr": {
       toastrOptions: {
-        positionClass: 'toast-bottom-center',
+        positionClass: "toast-bottom-center",
         timeOut: 2000, // 2 seconds
         closeButton: true,
         preventDuplicates: true,
         newestOnTop: true,
         hideDuration: 300,
         extendedTimeOut: 1000,
-        hideEasing: 'linear',
-        hideMethod: 'fadeOut',
-        showMethod: 'fadeIn',
-        showEasing: 'linear',
+        hideEasing: "linear",
+        hideMethod: "fadeOut",
+        showMethod: "fadeIn",
+        showEasing: "linear",
         showDuration: 300,
         // ...other options...
       },
     },
   };
 
-  if (environment === 'development') {
+  if (environment === "development") {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -45,19 +45,19 @@ module.exports = function (environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
-  if (environment === 'test') {
+  if (environment === "test") {
     // Testem prefers this...
-    ENV.locationType = 'none';
+    ENV.locationType = "none";
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-    ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.rootElement = "#ember-testing";
     ENV.APP.autoboot = false;
   }
 
-  if (environment === 'production') {
+  if (environment === "production") {
     // here you can enable a production-specific feature
   }
 

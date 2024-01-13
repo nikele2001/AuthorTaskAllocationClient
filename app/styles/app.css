@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic');
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic");
 
 /**
  * Base Elements
@@ -21,7 +21,7 @@ div,
 span,
 a,
 button {
-  font-family: Lato, 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial,
+  font-family: Lato, "Open Sans", "Helvetica Neue", "Segoe UI", Helvetica, Arial,
     sans-serif;
   line-height: 1.5;
 }
@@ -222,7 +222,7 @@ p {
   opacity: 1;
 }
 
-.modal-content button[type='submit'] {
+.modal-content button[type="submit"] {
   box-sizing: border-box; /* Include padding and border in element's total width and height */
   display: block;
   width: 100%;
@@ -360,7 +360,7 @@ p {
 }
 
 .author button.image::after {
-  content: '';
+  content: "";
   position: relative;
   top: 0;
   left: 0;
@@ -465,7 +465,7 @@ p {
 }
 
 .tomster {
-  background: url('../assets/images/teaching-tomster.png');
+  background: url("../assets/images/teaching-tomster.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 200px;
@@ -576,7 +576,7 @@ p {
   margin-bottom: 10px; /* Adjust this to your needs */
 }
 
-.modal-content input[type='text'] {
+.modal-content input[type="text"] {
   height: 25px; /* Adjust this to your needs */
   font-size: 16px; /* Adjust this to your needs */
   padding: 5px;

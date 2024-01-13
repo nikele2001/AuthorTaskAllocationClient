@@ -1,12 +1,12 @@
-import Component from '@glimmer/component';
-import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
-import { inject as service } from '@ember/service';
+import Component from "@glimmer/component";
+import { action } from "@ember/object";
+import { tracked } from "@glimmer/tracking";
+import { inject as service } from "@ember/service";
 
 export default class AddAuthorComponent extends Component {
   @service toast;
   @tracked showForm = false;
-  authorName = '';
+  authorName = "";
 
   @action
   toggleForm() {
@@ -22,17 +22,17 @@ export default class AddAuthorComponent extends Component {
   async addAuthor(event) {
     event.preventDefault();
 
-    if (this.authorName === '') {
-      this.toast.error('Please enter a name.');
+    if (this.authorName === "") {
+      this.toast.error("Please enter a name.");
       return;
     }
     // Add code here to add the author
     const response = await fetch(
       `http://localhost:3000/api/Authors/createAuthor`,
       {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name: this.authorName,
@@ -45,7 +45,7 @@ export default class AddAuthorComponent extends Component {
     if (response.ok) {
       window.location.reload();
     } else {
-      this.toast.error('Duplicate author name. Please try again.');
+      this.toast.error("Duplicate author name. Please try again.");
     }
   }
 }

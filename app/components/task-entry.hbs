@@ -1,19 +1,19 @@
-<article class='task-container'>
-  <div class='task-details'>
-    <p class='task-title'>Task Title: {{@task.title}}</p>
-    <p class='task-description-label'>Task Description: </p>
-    <p class='task-description'>{{@task.description}}</p>
-    <p class='task-status'>Task Status: {{@task.status}}</p>
-    <p class='task-due-date'>Task Due Date:
+<article class="task-container">
+  <div class="task-details">
+    <p class="task-title">Task Title: {{@task.title}}</p>
+    <p class="task-description-label">Task Description: </p>
+    <p class="task-description">{{@task.description}}</p>
+    <p class="task-status">Task Status: {{@task.status}}</p>
+    <p class="task-due-date">Task Due Date:
       {{format-date @task.dueDate}}</p>
   </div>
-  <div class='buttons'>
+  <div class="buttons">
     <EditTaskButton @task={{@task}} />
-    <div class='button-container'>
+    <div class="button-container">
       <button
-        type='button'
-        class='red-button task-delete-button'
-        {{on 'click' (fn this.deleteTask @task.id)}}
+        type="button"
+        class="red-button task-delete-button"
+        {{on "click" (fn this.deleteTask @task.id)}}
       >Delete Task</button>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import Route from '@ember/routing/route';
+import Route from "@ember/routing/route";
 
 /**
  * This route is responsible for fetching the data for the author page. It displays the tasks for a given author.

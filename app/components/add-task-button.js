@@ -1,13 +1,13 @@
-import Component from '@glimmer/component';
-import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
+import Component from "@glimmer/component";
+import { action } from "@ember/object";
+import { tracked } from "@glimmer/tracking";
 
 export default class AddTaskButtonComponent extends Component {
   @tracked showForm = false;
-  title = '';
-  description = '';
-  status = 'Pending';
-  dueDate = '';
+  title = "";
+  description = "";
+  status = "Pending";
+  dueDate = "";
   authorId = this.args.authorId;
 
   @action
@@ -40,9 +40,9 @@ export default class AddTaskButtonComponent extends Component {
     event.preventDefault();
     // Add code here to add the task
     const response = await fetch(`http://localhost:3000/api/Tasks/createTask`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         title: this.title,
