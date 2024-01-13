@@ -46,14 +46,14 @@ export default class AddTaskButtonComponent extends Component {
       },
       body: JSON.stringify({
         title: this.title,
-        description: this.description.replace(/\n/g, '<br>'),
+        description: this.description,
         status: this.status,
         dueDate: this.dueDate.substring(0, 10),
         authorId: this.authorId,
       }),
     });
 
-    const data = await response.json();
+    await response.json();
 
     if (response.ok) {
       window.location.reload();

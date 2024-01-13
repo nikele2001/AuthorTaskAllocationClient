@@ -1,13 +1,15 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
 
 export default class AuthorEntryComponent extends Component {
+  @service toast;
   @tracked isEditing = false;
   newAuthorName = '';
 
   @action
-  toggleEditing() {
+  toggleForm() {
     this.isEditing = !this.isEditing;
   }
 
@@ -17,7 +19,7 @@ export default class AuthorEntryComponent extends Component {
       `http://localhost:3000/api/Authors/${authorId}`,
       {
         method: 'DELETE',
-      },
+      }
     );
 
     if (response.ok) {
@@ -39,6 +41,11 @@ export default class AuthorEntryComponent extends Component {
   async saveChanges(authorId) {
     event.preventDefault();
 
+    if (this.newAuthorName === '') {
+      this.toast.error('Please enter a name.');
+      return;
+    }
+
     const response = await fetch(
       `http://localhost:3000/api/Authors/updateAuthor`,
       {
@@ -52,10 +59,10 @@ export default class AuthorEntryComponent extends Component {
             name: this.newAuthorName,
           },
         }),
-      },
+      }
     );
 
-    const data = await response.json();
+    await response.json();
 
     if (response.ok) {
       this.isEditing = false;
@@ -64,8 +71,7 @@ export default class AuthorEntryComponent extends Component {
       // Handle successful update
     } else {
       // Handle error
-      this.isEditing = false;
-      console.error('An error occurred while updating the author');
+      this.toast.error('Duplicate author name. Please try again.');
     }
   }
 }

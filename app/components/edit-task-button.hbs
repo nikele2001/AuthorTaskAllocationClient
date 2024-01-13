@@ -1,65 +1,72 @@
-<div class="button-container">
+<div class='button-container'>
   <button
-    type="button"
-    class="grey-button"
-    id="edit-task-button"
-    {{on "click" this.toggleForm}}
+    type='button'
+    class='grey-button'
+    id='edit-task-button'
+    {{on 'click' this.toggleForm}}
   >Edit Task</button>
 </div>
 
 {{#if this.showForm}}
-  <div id="edit-task-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" {{on "click" this.toggleForm}}>&times;</span>
-      <h4>Edit Task</h4>
-      <form id="edit-task-form" {{on "submit" (fn this.updateTask @task.id)}}>
-        <label for="taskTitle">Task Title:</label>
+  <div id='edit-task-modal' class='modal'>
+    <div class='modal-content'>
+      <button
+        type='button'
+        class='close'
+        id='close-button'
+        {{on 'click' this.toggleForm}}
+      >&times;</button>
+      <h3>Edit Task</h3>
+      <form id='edit-task-form' {{on 'submit' (fn this.updateTask @task.id)}}>
+        <label for='taskTitle'>Task Title:</label>
         <input
-          type="text"
-          id="taskTitle"
-          name="taskTitle"
+          type='text'
+          id='taskTitle'
+          name='taskTitle'
           value={{this.title}}
-          {{on "input" this.updateTitle}}
+          {{on 'input' this.updateTitle}}
           required
         />
 
-        <label for="taskDescription">Task Description:</label>
+        <label for='taskDescription'>Task Description:</label>
         <textarea
-          id="taskDescription"
-          name="taskDescription"
+          id='taskDescription'
+          name='taskDescription'
           value={{this.description}}
-          {{on "input" this.updateDescription}}
+          {{on 'input' this.updateDescription}}
           required
         ></textarea>
 
-        <label for="taskStatus">Task Status:</label>
+        <label for='taskStatus'>Task Status:</label>
         <select
-          id="taskStatus"
-          name="taskStatus"
+          id='taskStatus'
+          name='taskStatus'
           value={{this.status}}
-          {{on "change" this.updateStatus}}
+          {{on 'change' this.updateStatus}}
         >
           <option
-            value="Pending"
-            {{on "select" (fn this.updateStatus "Pending")}}
+            value='Pending'
+            {{on 'select' (fn this.updateStatus 'Pending')}}
           >Pending</option>
           <option
-            value="Completed"
-            {{on "select" (fn this.updateStatus "Completed")}}
+            value='Completed'
+            {{on 'select' (fn this.updateStatus 'Completed')}}
           >Completed</option>
         </select>
 
-        <label for="dueDate">Due Date:</label>
+        <label for='dueDate'>Due Date:</label>
         <input
-          type="date"
-          id="dueDate"
-          name="dueDate"
+          type='date'
+          id='dueDate'
+          name='dueDate'
           value={{this.dueDate}}
-          {{on "input" this.updateDueDate}}
+          {{on 'input' this.updateDueDate}}
           required
         />
 
-        <input type="submit" value="Edit Task" />
+        <div class='button-container'>
+          <button type='submit'>Edit Task</button>
+        </div>
       </form>
     </div>
   </div>
