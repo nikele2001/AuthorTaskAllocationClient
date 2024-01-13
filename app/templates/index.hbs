@@ -1,13 +1,13 @@
 <NavBar />
 <Jumbo>
-  <h2>Welcome to Author Task Allocation!</h2>
-  <p>Your one stop solution to managing and allocating tasks to authors.</p>
+    <h2>Welcome to Author Task Allocation!</h2>
+    <p>Your one stop solution to managing and allocating tasks to authors.</p>
 </Jumbo>
 <AddAuthor />
-<div class="authors">
-  <ul class="results">
-    {{#each @model.authors as |author|}}
-      <li><AuthorEntry @author={{author}} /></li>
-    {{/each}}
-  </ul>
+<div class='authors'>
+    <ul class='results'>
+        {{#each @model.authors as |author|}}
+            <li><AuthorEntry @author={{author}} /></li>
+        {{/each}}
+    </ul>
 </div>
