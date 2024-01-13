@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic");
 
 /**
  * Base Elements
@@ -21,8 +21,8 @@ div,
 span,
 a,
 button {
-  font-family: "Lato", "Open Sans", "Helvetica Neue", "Segoe UI", Helvetica,
-    Arial, sans-serif;
+  font-family: Lato, "Open Sans", "Helvetica Neue", "Segoe UI", Helvetica, Arial,
+    sans-serif;
   line-height: 1.5;
 }
 
@@ -51,7 +51,7 @@ p {
 .blue-button {
   width: 200px;
   justify-content: center;
-  padding: 10px 30px 10px;
+  padding: 10px 30px;
   text-decoration: none;
   color: #fff;
   background: #016aba;
@@ -70,7 +70,7 @@ p {
 .red-button {
   width: 200px;
   justify-content: center;
-  padding: 10px 30px 10px;
+  padding: 10px 30px;
   text-decoration: none;
   color: #fff;
   background: #a91c00;
@@ -89,7 +89,7 @@ p {
 .green-button {
   width: 200px;
   justify-content: center;
-  padding: 10px 30px 10px;
+  padding: 10px 30px;
   text-decoration: none;
   color: #fff;
   background: #0a7d00;
@@ -108,7 +108,7 @@ p {
 .grey-button {
   width: 200px;
   justify-content: center;
-  padding: 10px 30px 10px;
+  padding: 10px 30px;
   text-decoration: none;
   color: #fff;
   background: #555;
@@ -134,14 +134,13 @@ p {
   background: #f9f9f9;
   margin: 0 auto;
 }
+
 /**
  * Top Navigation
  */
 
 .menu {
   height: 4em;
-  background-color: #677ae4;
-  background-color: #05526a;
   background-color: #e46855;
 }
 
@@ -164,6 +163,14 @@ p {
   color: #fff;
   font-size: 20px;
   font-weight: bold;
+}
+
+.author h3 {
+  flex-basis: 100%;
+}
+
+.author h3 a {
+  display: inline;
 }
 
 .menu a:hover,
@@ -193,7 +200,7 @@ p {
   font-size: 18px;
   width: 500px;
   margin: 20px auto 50px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: #ffffffbf;
   border: solid 1px lightgray;
   display: block;
 }
@@ -215,9 +222,42 @@ p {
   opacity: 1;
 }
 
+.modal-content button {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgb(0 0 0 / 15%); /* Shadow for a bit of depth */
+  padding: 10px 15px; /* Add some padding */
+  text-align: center; /* Center the text */
+  border-width: 0;
+}
+
+.add-author button {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgb(0 0 0 / 15%); /* Shadow for a bit of depth */
+  padding: 10px 15px; /* Add some padding */
+  text-align: center; /* Center the text */
+  border-width: 0;
+}
+
 .menu button:hover {
   background-color: #111;
   opacity: 1;
+}
+
+.results {
+  margin-top: -10px;
 }
 
 .menu .results {
@@ -227,12 +267,8 @@ p {
   top: 54px;
   left: 10px;
   background-color: #f6f6f6;
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.results {
-  margin-top: -10px;
+  border-right: 1px solid #00000d;
+  border-bottom: 1px solid #00000d;
 }
 
 .results li {
@@ -243,6 +279,7 @@ p {
 .menu .results li:hover {
   background: #f3f3f3;
 }
+
 /**
  * Content Area
  */
@@ -250,6 +287,7 @@ p {
 .body {
   padding: 15px;
 }
+
 /**
  * Similar to Jumbotron
  */
@@ -321,7 +359,7 @@ p {
   outline: none;
 }
 
-.author button.image:after {
+.author button.image::after {
   content: "";
   position: relative;
   top: 0;
@@ -337,8 +375,8 @@ p {
   transition: opacity 0.25s ease-in-out;
 }
 
-.author button.image:focus:after,
-.author button.image:hover:after {
+.author button.image:focus::after,
+.author button.image:hover::after {
   opacity: 0.1;
 }
 
@@ -347,7 +385,7 @@ p {
 }
 
 .author .image.large {
-  margin: 30px 25px 50px 25px;
+  margin: 30px 25px 50px;
   flex-basis: 100%;
 }
 
@@ -364,7 +402,7 @@ p {
 
 .author .image.large small {
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   font-size: 110%;
 }
 
@@ -374,17 +412,8 @@ p {
   display: flex;
   height: 150px;
   margin: 20px 25px;
-  justify-content: space-between;
+  place-content: space-around space-between;
   flex-wrap: wrap;
-  align-content: space-around;
-}
-
-.author h3 {
-  flex-basis: 100%;
-}
-
-.author h3 a {
-  display: inline;
 }
 
 .author .detail {
@@ -403,87 +432,12 @@ p {
   flex-grow: 0;
   flex-basis: 150px;
   font-size: 0;
-  margin: 0px 25px;
+  margin: 0 25px;
 }
 
 .author .map img {
   width: 150px;
   height: 150px;
-}
-
-.rental.detailed {
-  background: none;
-  align-items: flex-start;
-}
-
-.rental.detailed .image {
-  flex-basis: 320px;
-}
-
-.rental.detailed .image.large {
-  margin: 30px 25px 50px 25px;
-  flex-basis: 100%;
-}
-
-.rental.detailed .details {
-  height: auto;
-}
-
-.rental.detailed h3 {
-  font-size: 200%;
-  margin-bottom: 10px;
-}
-
-.rental.detailed .detail {
-  margin: 5px 0px;
-  flex-basis: 100%;
-  flex-shrink: 2;
-}
-
-.rental.detailed .description {
-  white-space: normal;
-  flex-basis: 100%;
-  flex-shrink: 1;
-}
-
-.rental.detailed .map {
-  flex-basis: 100%;
-  margin: 50px 25px 25px 25px;
-}
-
-.rental.detailed .map img {
-  width: 100%;
-  height: auto;
-}
-
-@media only screen and (max-width: 919px) {
-  .rental.detailed .image,
-  .rental.detailed .image.large {
-    margin: 30px 25px 25px 25px;
-    flex-basis: 100%;
-    cursor: default;
-  }
-
-  .rental.detailed .image:hover {
-    flex-basis: 100%;
-    cursor: default;
-  }
-
-  .rental.detailed .image small {
-    display: none;
-  }
-
-  .rental.detailed button.image:hover:after {
-    opacity: 0;
-  }
-
-  .rental.detailed button.image:focus:after {
-    opacity: 0.1;
-  }
-
-  .rental.detailed .map {
-    margin-top: 25px;
-  }
 }
 
 /**
@@ -511,12 +465,11 @@ p {
 }
 
 .tomster {
-  background: url(../assets/images/teaching-tomster.png);
+  background: url("../assets/images/teaching-tomster.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 200px;
   width: 200px;
-
   position: relative;
   top: -25px;
 }
@@ -571,12 +524,20 @@ p {
   background-color: #fff; /* White background */
   padding: 10px; /* Padding around the content */
   border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Shadow for a bit of depth */
+  box-shadow: 0 2px 5px rgb(0 0 0 / 15%); /* Shadow for a bit of depth */
 }
 
 .author-details .buttons {
   display: flex;
   justify-content: flex-end; /* Align the buttons to the right */
+}
+
+.author-tasks-details,
+.author-tasks-details .details .box {
+  background-color: #fff; /* White background */
+  padding: 10px; /* Padding around the content */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgb(0 0 0 / 15%); /* Shadow for a bit of depth */
 }
 
 .button-container {
@@ -593,8 +554,8 @@ p {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  background-color: rgb(0 0 0); /* Fallback color */
+  background-color: rgb(0 0 0 / 40%); /* Black w/ opacity */
 }
 
 .modal-content {
@@ -620,21 +581,6 @@ p {
   padding: 5px;
 }
 
-.modal-content button {
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
-  display: block;
-  width: 100%;
-  font-size: 18px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  justify-content: center;
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Shadow for a bit of depth */
-  padding: 10px 15px; /* Add some padding */
-  text-align: center; /* Center the text */
-  border-width: 0cap;
-}
-
 .close {
   color: #aaa;
   float: right;
@@ -647,20 +593,6 @@ p {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-.add-author button {
-  display: block;
-  width: 100%;
-  font-size: 18px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  justify-content: center;
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Shadow for a bit of depth */
-  padding: 10px 15px; /* Add some padding */
-  text-align: center; /* Center the text */
-  border-width: 0cap;
 }
 
 .flex-container {
@@ -678,8 +610,18 @@ p {
   margin-bottom: 20px;
 }
 
+.task-description {
+  width: 800px;
+  border: 1px solid #808080; /* Add a border */
+  background-color: #fff; /* White background */
+  padding: 10px; /* Padding around the content */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgb(0 0 0 / 15%); /* Shadow for a bit of depth */
+}
+
 .task-title,
 .task-description,
+.task-description-label,
 .task-status,
 .task-due-date {
   font-size: 16px;
@@ -699,26 +641,26 @@ p {
   display: flex;
 }
 
-#addTaskForm label,
-#editTaskForm label {
+#add-task-form label,
+#edit-task-form label {
   font-weight: bold;
   margin-top: 10px;
 }
 
-#addTaskForm input,
-#editTaskForm input,
-#addTaskForm textarea,
-#editTaskForm textarea,
-#addTaskForm select,
-#editTaskForm select {
+#add-task-form input,
+#edit-task-form input,
+#add-task-form textarea,
+#edit-task-form textarea,
+#add-task-form select,
+#edit-task-form select {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
   margin-top: 5px;
 }
 
-#addTaskForm button,
-#editTaskForm button {
+#add-task-form button,
+#edit-task-form button {
   margin-top: 20px;
   padding: 10px 20px;
   border: none;
@@ -728,7 +670,7 @@ p {
   cursor: pointer;
 }
 
-#addTaskForm button:hover,
-#editTaskForm button:hover {
+#add-task-form button:hover,
+#edit-task-form button:hover {
   background-color: #007b9a; /* Change this to match your theme color */
 }

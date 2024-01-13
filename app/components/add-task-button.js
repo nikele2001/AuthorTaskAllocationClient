@@ -46,7 +46,7 @@ export default class AddTaskButtonComponent extends Component {
       },
       body: JSON.stringify({
         title: this.title,
-        description: this.description,
+        description: this.description.replace(/\n/g, '<br>'),
         status: this.status,
         dueDate: this.dueDate.substring(0, 10),
         authorId: this.authorId,

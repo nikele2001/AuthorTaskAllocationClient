@@ -48,7 +48,7 @@ export default class EditTaskButtonComponent extends Component {
       body: JSON.stringify({
         id: taskId,
         title: this.title,
-        description: this.description,
+        description: this.description.replace(/\n/g, '<br>'),
         status: this.status,
         dueDate: this.dueDate.substring(0, 10),
       }),
